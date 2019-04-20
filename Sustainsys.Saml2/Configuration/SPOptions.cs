@@ -56,6 +56,7 @@ namespace Sustainsys.Saml2.Configuration
                 configSection.NameIdPolicyElement.AllowCreate, configSection.NameIdPolicyElement.Format);
             RequestedAuthnContext = new Saml2RequestedAuthnContext(configSection.RequestedAuthnContext);
             Compatibility = new Compatibility(configSection.Compatibility);
+            Extensions = new Saml2PExtensions(configSection.Extensions);
 
             configSection.ServiceCertificates.RegisterServiceCertificates(this);
 
@@ -399,6 +400,11 @@ namespace Sustainsys.Saml2.Configuration
                 minIncomingSigningAlgorithm = value;
             }
         }
+
+        /// <summary>
+        /// Extension settings. Can be used for eidas requests.
+        /// </summary>
+        public Saml2PExtensions Extensions { get; set; }
 
         /// <summary>
         /// Adapter to logging framework of hosting application.

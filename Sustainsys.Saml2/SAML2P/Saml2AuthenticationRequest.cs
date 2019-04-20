@@ -67,6 +67,11 @@ namespace Sustainsys.Saml2.Saml2P
                         RequestedAuthnContext.ClassRef.OriginalString)));
             }
 
+            if (Extensions?.RequestedAttributes != null)
+            {
+                x.Add(Extensions.ToXElement());
+            }
+
             AddScoping(x);
 
             return x;
@@ -207,6 +212,11 @@ namespace Sustainsys.Saml2.Saml2P
         /// RequestedAuthnContext.
         /// </summary>
         public Saml2RequestedAuthnContext RequestedAuthnContext { get; set; }
+
+        /// <summary>
+        /// Extensions.
+        /// </summary>
+        public Saml2PExtensions Extensions { get; set; }
 
         /// <summary>
         /// Binding type to request the Idp to use when responding.

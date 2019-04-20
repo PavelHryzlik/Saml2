@@ -309,6 +309,7 @@ namespace Sustainsys.Saml2
                 AttributeConsumingServiceIndex = spOptions.AttributeConsumingServices.Any() ? 0 : (int?)null,
                 NameIdPolicy = spOptions.NameIdPolicy,
                 RequestedAuthnContext = spOptions.RequestedAuthnContext,
+                Extensions = spOptions.Extensions,
                 SigningAlgorithm = this.OutboundSigningAlgorithm
             };
 

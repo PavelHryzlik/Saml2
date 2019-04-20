@@ -394,5 +394,18 @@ namespace Sustainsys.Saml2.Configuration
                 return (CompatibilityElement)base[compatibility];
             }
         }
-	}
+
+        /// <summary>
+        /// Extension settings. Can be used for eidas requests.
+        /// </summary>
+        const string extensions = nameof(extensions);
+        [ConfigurationProperty(extensions)]
+        public ExtensionsElement Extensions
+        {
+            get
+            {
+                return (ExtensionsElement)base[extensions];
+            }
+        }
+    }
 }
